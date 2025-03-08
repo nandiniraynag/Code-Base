@@ -12,7 +12,7 @@ var ajaxCall = (key, url, prompt) => {
           "role": "user",
           "content": "Write a haiku about recursion in programming."
         }
-        ]
+        ],
         prompt: prompt,
         max_tokens: 2048,
         n: 1,
