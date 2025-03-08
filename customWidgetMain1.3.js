@@ -7,13 +7,15 @@ var ajaxCall = (key, url, prompt) => {
       data: JSON.stringify({
         model: "gpt-4o",
         messages=[
-        {"role": "developer", "content": "You are a helpful assistant."},
-        {
+       {
           "role": "user",
-          "content": "Write a haiku about recursion in programming."
+          "content": [
+            {
+                "type": "text",
+                "text": "Capital of India ?"
+            }]  
         }
         ],
-        prompt: prompt,
         max_tokens: 3000,
         n: 1,
         temperature: 1.00,
