@@ -12,7 +12,7 @@ var ajaxCall = (key, url, prompt) => {
           "content": [
             {
                 "type": "text",
-                "text": "Capital of India ?"
+                "text": prompt
             }]  
         }
         ],
