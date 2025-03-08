@@ -17,7 +17,7 @@ var ajaxCall = (key, url, prompt) => {
         }
         ],
         max_tokens: 2048,
-        temperature: 1.00,
+        temperature: 0.5,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ var ajaxCall = (key, url, prompt) => {
   });
 };
 
-const url = "https://api.openai.com/v1/chat";
+const url = "https://api.openai.com/v1";
 
 (function () {
   const template = document.createElement("template");
