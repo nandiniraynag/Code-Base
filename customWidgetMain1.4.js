@@ -6,18 +6,9 @@ var ajaxCall = (key, url, prompt) => {
       dataType: "json",
       data: JSON.stringify({
         model: "gpt-4o",
-        messages=[
-       {
-          "role": "user",
-          "content": [
-            {
-                "type": "text",
-                "text": prompt
-            }]  
-        }
-        ],
-        max_tokens: 2048,
-        temperature: 0.5,
+        messages= prompt, 
+        max_tokens: 150,
+        temperature: 0.7,
       }),
       headers: {
         "Content-Type": "application/json",
