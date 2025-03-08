@@ -5,7 +5,7 @@ var ajaxCall = (key, url, prompt) => {
       type: "POST",
       dataType: "json",
       data: JSON.stringify({
-        model: "gpt-4-0613",
+        model: "gpt-4o",
         messages=[
        {
           "role": "user",
