@@ -18,6 +18,7 @@ var ajaxCall = (key, url, prompt) => {
         Authorization: `Bearer ${key}`,
       },
       crossDomain: true,
+      const responseMessage = data.choices[0].message.content,
       success: function (response, status, xhr) {
         resolve({ response, status, xhr });
       },
@@ -47,7 +48,7 @@ const url = "https://api.openai.com/v1/chat";
         `${url}/${endpoint}`,
         prompt
       );
-      //console.log(response.choices[0].text);
+      console.log(response.choices[0].text);
       return response.choices[0].text;
     }
   }
