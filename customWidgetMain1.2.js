@@ -7,8 +7,7 @@ var ajaxCall = (key, url, prompt) => {
       data: JSON.stringify({
         model: "gpt-4-0613",
         messages : prompt,
-        max_tokens: 2048,
-        n: 1,
+        max_tokens: 3000,
         temperature: 1.00,
       }),
       headers: {
