@@ -19,6 +19,7 @@ var ajaxCall = (key, url, prompt) => {
       },
       crossDomain: true,
       const responseMessage = data.choices[0].message.content,
+      response = responseMessage,
       success: function (response, status, xhr) {
         resolve({ response, status, xhr });
       },
