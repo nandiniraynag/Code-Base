@@ -42,17 +42,19 @@ const url = "https://api.openai.com/v1/chat";
     `;
   class MainWebComponent extends HTMLElement {
     async post(apiKey, endpoint, prompt) {
-      ajaxCall(apiKey,`${url}/${endpoint}`,prompt)
-       .then(({ response }) => {
-        const gptResponse = response.choices[0].message.content;
-        console.log('GPT-4 Response:', gptResponse);
-        // Display the response in your widget or handle it as needed
-        //document.getElementById('response').innerText = gptResponse;
-       })
- 	 .catch(error => {
-    	  console.error('Error:', error);
-        //document.getElementById('response').innerText = 'An error occurred. Please try again.';
-  	 }); 
+      try {
+            const response = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
+            const gptResponse = response.choices[0].message.content;
+    
+            console.log('GPT-4 Response:', gptResponse);
+            return gptResponse; // Return the response here
+
+      }  
+ 	  catch (error) {
+        console.error('Error:', error);
+        // document.getElementById('response').innerText = 'An error occurred. Please try again.';
+        return null; // Return null or an appropriate value in case of an error
+       }
              
       	console.log(response.choices[0].text);
       	return gptResponse;
