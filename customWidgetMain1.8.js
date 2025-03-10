@@ -43,11 +43,13 @@ const url = "https://api.openai.com/v1/chat";
   class MainWebComponent extends HTMLElement {
     async post(apiKey, endpoint, prompt) {
       try {
-            const response = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
+            const { response } = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
             const gptResponse = response.choices[0].message.content;
     
             console.log('GPT-4 Response:', gptResponse);
+            console.log("Flow is in Try Block so no error");
             return gptResponse; // Return the response here
+            console.log("Response is returned successfully");
 
       }  
  	  catch (error) {
