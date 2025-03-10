@@ -44,13 +44,20 @@ const url = "https://api.openai.com/v1/chat";
     async post(apiKey, endpoint, prompt) {
       try {
             const { response } = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
+            console.log('Full Response:', response);
             const gptResponse = response.choices[0].message.content;
-    
-            console.log('GPT-4 Response is :', gptResponse);
-            console.log("Success, no error");
-        
-            return gptResponse; // Return the response here
-          }  
+
+           if ( response.choices.length > 0 )
+           {
+              console.log('GPT-4 Response is :', gptResponse);
+              console.log("Success, no error");
+           } else 
+           {
+              console.error('Unexpected response structure:', response);
+              return null; // Return null if the response structure is unexpected
+            }
+                   
+          }  // end of Try Block 
  	  catch (error) {
         console.error('Error:', error);
         // document.getElementById('response').innerText = 'An error occurred. Please try again.';
