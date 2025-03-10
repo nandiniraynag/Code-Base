@@ -49,11 +49,12 @@ const url = "https://api.openai.com/v1/chat";
           const gptResponse = response.choices[0].message.content;
           console.log('GPT-4 Response:', gptResponse);
           // Display the response in your widget or handle it as needed
-          document.getElementById('response').innerText = gptResponse;
+          //document.getElementById('response').innerText = gptResponse;
+          return gptResponse;
         })
         .catch(error => {
           console.error('Error:', error);
-          document.getElementById('response').innerText = 'An error occurred. Please try again.';
+          //document.getElementById('response').innerText = 'An error occurred. Please try again.';
         });
     }
   }
