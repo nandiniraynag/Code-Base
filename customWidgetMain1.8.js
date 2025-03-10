@@ -55,9 +55,7 @@ const url = "https://api.openai.com/v1/chat";
         // document.getElementById('response').innerText = 'An error occurred. Please try again.';
         return null; // Return null or an appropriate value in case of an error
        }
-             
-      	console.log(response.choices[0].text);
-      	return gptResponse;
+         
     }
   }
   customElements.define("custom-widget", MainWebComponent);
