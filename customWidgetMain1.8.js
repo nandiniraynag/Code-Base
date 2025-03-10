@@ -18,7 +18,6 @@ var ajaxCall = (key, url, prompt) => {
         Authorization: `Bearer ${key}`,
       },
       crossDomain: true,
-      const response = {data},
       success: function (response, status, xhr) {
         resolve({ response, status, xhr });
       },
