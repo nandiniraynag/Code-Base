@@ -47,11 +47,10 @@ const url = "https://api.openai.com/v1/chat";
             const gptResponse = response.choices[0].message.content;
     
             console.log('GPT-4 Response:', gptResponse);
-            console.log("Flow is in Try Block so no error");
+            console.log("Success, no error");
+        
             return gptResponse; // Return the response here
-            console.log("Response is returned successfully");
-
-      }  
+          }  
  	  catch (error) {
         console.error('Error:', error);
         // document.getElementById('response').innerText = 'An error occurred. Please try again.';
