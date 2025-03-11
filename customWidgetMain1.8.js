@@ -10,8 +10,8 @@ var ajaxCall = (key, url, prompt) => {
             { role: 'system', content: 'You are a helpful assistant.' },
             { role: 'user', content: prompt }
         ],
-        "response_format": {
-            "type": "json_object"
+        response_format: {
+            type: "json_object"
         },
         max_completion_tokens: 300,
         temperature: 1.00,
