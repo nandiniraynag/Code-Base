@@ -5,12 +5,12 @@ var ajaxCall = (key, url, prompt) => {
       type: "POST",
       dataType: "json",
       data: JSON.stringify({
-        model: "gpt-4-0613",
+        model: "gpt-4",
         messages : [
             { role: 'system', content: 'You are a helpful assistant.' },
             { role: 'user', content: prompt }
         ],
-        max_tokens: 3000,
+        max_tokens: 300,
         temperature: 1.00,
       }),
       headers: {
