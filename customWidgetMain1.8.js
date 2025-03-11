@@ -45,8 +45,10 @@ const url = "https://api.openai.com/v1/chat";
       try {
             const { response } = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
             console.log('Full Response:', response);
-            const gptResponse =  response.choices[0].message.content.trim();
+            return response;
+            //const gptResponse =  response.choices[0].message.content.trim();
 
+           /*
            if ( response.choices.length > 0 )
            {
               console.log('GPT-4 Text:', gptResponse);
@@ -56,7 +58,7 @@ const url = "https://api.openai.com/v1/chat";
            {
               console.error('Unexpected response structure:', response);
               return null; // Return null if the response structure is unexpected
-            }
+            } */
                    
           }  // end of Try Block 
  	  catch (error) {
