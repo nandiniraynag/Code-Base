@@ -45,6 +45,7 @@ const url = "https://api.openai.com/v1/chat";
       try {
             const { response } = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
             console.log('Full Response:', response);
+            console.log(response.choices[0].text);
             return response;
             //const gptResponse =  response.choices[0].message.content.trim();
 
