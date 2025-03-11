@@ -45,11 +45,11 @@ const url = "https://api.openai.com/v1/chat";
       try {
             const { response } = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
             console.log('Full Response:', response);
-            const gptResponse = response.choices[0].message.content;
+            const gptResponse = response.choices[0].text;
 
            if ( response.choices.length > 0 )
            {
-              console.log('GPT-4 is responding now :', gptResponse);
+              console.log('GPT-4 Text:', gptResponse);
               console.log("Success, no error");
               return gptResponse;
            } else 
