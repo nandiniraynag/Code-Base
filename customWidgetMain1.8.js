@@ -10,10 +10,7 @@ var ajaxCall = (key, url, prompt) => {
             { role: 'system', content: 'You are a helpful assistant.' },
             { role: 'user', content: prompt }
         ],
-        response_format: {
-            type: "json_object"
-        },
-        max_completion_tokens: 300,
+        max_tokens: 300,
         temperature: 1.00,
       }),
       headers: {
@@ -48,7 +45,7 @@ const url = "https://api.openai.com/v1/chat";
       try {
             const { response } = await ajaxCall(apiKey, `${url}/${endpoint}`, prompt);
             console.log('Full Response:', response);
-            const gptResponse = response.choices[0].text;
+            const gptResponse =  response.choices[0].message.content.trim();
 
            if ( response.choices.length > 0 )
            {
