@@ -49,8 +49,9 @@ const url = "https://api.openai.com/v1/chat";
 
            if ( response.choices.length > 0 )
            {
-              console.log('GPT-4 Response is :', gptResponse);
+              console.log('GPT-4 is responding now :', gptResponse);
               console.log("Success, no error");
+              return gptResponse;
            } else 
            {
               console.error('Unexpected response structure:', response);
