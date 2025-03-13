@@ -10,7 +10,7 @@ var ajaxCall = (key, url, prompt) => {
             { role: 'system', content: 'You are a helpful assistant.\n' },
             { role: 'user', content: 'Interpret this input data by user to figure out the changes required in Dashboard filter or KPI using data after this line : Input Data - what would happen if we increase Net Income by 2% for Alpha Company ./using the context data here : Context Data - A Dashboard has 3 filters - Date ( Year ) , Company Code, Jurisdiction /n/n Dashboard has 2 KPIs Net Income and Net Tax Expense /n/n Return the response as given in  the example response here example1 : user :  what would happen if we increase Net Income for Alpha Company by 5%, /n Assistant : Filters = [ Year = NA, Company Code = Alpha Company, Jurisdiction = NA ], KPI = [ Net Income = 0.05, Net Tax Expense = NA], example2 : user :  what would happen if we increase Net Tax expense  for Beta Company by 2% in year = 2021 , /n Assistant : Filters = [ Year = 2021, Company Code = Beta Company, Jurisdiction = NA ], KPI = [  Net Tax = NA, Net Tax Expense = 0.02] . Important information : keep the response                                       as example response , do not give extra information, 
                                       just stick to response format /n".' },
-            {"role": 'assistant',   content: { 'Filters = [ Year = NA, Company Code = Alpha Company, Jurisdiction = NA ], KPI = [ Net Income = 0.02, Net Tax Expense = NA]'}
+            {"role": 'assistant',   content: prompt }
         
       ],
    
