@@ -7,9 +7,8 @@
       </div>
     `;
   class MainWebComponent extends HTMLElement {
-   / Function to capture the input string from the text box and apply filters
-	 // Function to capture the input string from the text box and apply filters
-		function applyFilters(inputString) {
+ // Function to capture the input string from the text box and apply filters
+ function getFilters(inputString) {
    
     // Define a regular expression to match the key-value pairs
     const regex = /(\w+\s*\w*)\s*=\s*([^,]+)/g;
