@@ -12,6 +12,7 @@
    
     // Define a regular expression to match the key-value pairs
     const regex = /(\w+\s*\w*)\s*=\s*([^,]+)/g;
+    console.log(regex);
 
     // Initialize an object to store the extracted values
     var filters = {};
