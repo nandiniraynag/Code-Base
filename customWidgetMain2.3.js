@@ -31,7 +31,7 @@
         console.log(filters);
     }
        // Return the extracted filters
-    		return filters;
+    		return JSON.stringify(filters).;
 
   }
   customElements.define("custom-widget", MainWebComponent);
