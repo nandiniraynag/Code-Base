@@ -37,7 +37,7 @@ function extractFilters(filterString) {
     });
 
     console.log('Extracted filters:', filters);
-    return JSON.stringify(filters;
+    return JSON.stringify(filters);
 }
 
 // Example usage
