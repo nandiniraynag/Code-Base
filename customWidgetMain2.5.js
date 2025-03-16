@@ -10,7 +10,7 @@ function getFilters(inputString) {
         if (!filters) {
             throw new Error('No filters found');
         }
-        return JSON.stringify(filters;
+        return JSON.stringify(filters);
     } catch (error) {
         console.error('Error in getFilters:', error);
         throw error; // Re-throw the error to be handled by the calling function
