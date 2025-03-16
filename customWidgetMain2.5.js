@@ -1,8 +1,9 @@
 // Code 
-function getFilters() {
+function getFilters(inputString) {
     console.log('getFilters method called');
     try {
         // Example logic to retrieve filters
+        const strng = inputString;
         const filterString = 'filters = [City = Pune, Month = March ]';
         const filters = extractFilters(filterString);
         console.log('Filters retrieved:', filters);
