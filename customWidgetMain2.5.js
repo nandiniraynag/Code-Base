@@ -3,6 +3,8 @@ function getFilters(Inputstring) {
      // Remove the square brackets and trim any extra spaces
     input = input.replace(/[\[\]]/g, '').trim();
 
+    degugger;
+
     // Split the string by comma to get each key-value pair
     let pairs = input.split(',');
 
@@ -21,6 +23,6 @@ function getFilters(Inputstring) {
         // Add the key-value pair to the result object
         result[key] = value;
     });
-
+ degugger;
     return JSON.stringify(filters);
 }
