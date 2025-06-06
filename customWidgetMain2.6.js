@@ -40,5 +40,5 @@ async function sendChatGPTPrompt(apiKey, url, prompt) {
   return data.choices[0].message.content.trim();
 }
   }
-
+customElements.define("custom-widget", MainWebComponent);
 })();
