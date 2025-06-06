@@ -1,13 +1,11 @@
-(function () {
-  const template = document.createElement("template");
-  template.innerHTML = `
-      <style>
-      </style>
-      <div id="root" style="width: 100%; height: 100%;">
-      </div>
-    `;
-  class MainWebComponent extends HTMLElement {
-   async function getChatGPTResponse(apiKey, url, prompt) {
+/**
+ * Sends a prompt to the OpenAI Chat Completion API and returns the text response.
+ * @param {string} apiKey  - OpenAI API key
+ * @param {string} url     - OpenAI chat completions endpoint URL
+ * @param {string} prompt  - User's prompt/question
+ * @returns {Promise<string>}  - Text part of the response
+ */
+async function sendChatGPTPrompt(apiKey, url, prompt) {
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -15,25 +13,20 @@
       "Authorization": `Bearer ${apiKey}`
     },
     body: JSON.stringify({
-      model: "gpt-4.1",
+      model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are a helpful assistant." },
         { role: "user", content: prompt }
       ],
-      max_tokens: 3000
+      max_tokens: 150
     })
   });
 
-  // Check if the request was successful
   if (!response.ok) {
-    throw new Error(`Error: ${response.status} ${response.statusText}`);
+    const errorText = await response.text();
+    throw new Error(errorText || response.statusText);
   }
 
   const data = await response.json();
   return data.choices[0].message.content.trim();
 }
-
-
-  }
-  customElements.define("custom-widget", MainWebComponent);
-})();
