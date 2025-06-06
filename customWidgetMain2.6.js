@@ -27,7 +27,7 @@ async function sendChatGPTPrompt(apiKey, url, prompt) {
         { role: "system", content: "You are a helpful assistant." },
         { role: "user", content: prompt }
       ],
-      max_tokens: 150
+      max_tokens: 3000
     })
   });
 
