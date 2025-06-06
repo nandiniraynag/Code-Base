@@ -1,3 +1,12 @@
+(function () {
+  const template = document.createElement("template");
+  template.innerHTML = `
+      <style>
+      </style>
+      <div id="root" style="width: 100%; height: 100%;">
+      </div>
+    `;
+  class MainWebComponent extends HTMLElement {
 /**
  * Sends a prompt to the OpenAI Chat Completion API and returns the text response.
  * @param {string} apiKey  - OpenAI API key
@@ -30,3 +39,6 @@ async function sendChatGPTPrompt(apiKey, url, prompt) {
   const data = await response.json();
   return data.choices[0].message.content.trim();
 }
+  }
+
+})();
