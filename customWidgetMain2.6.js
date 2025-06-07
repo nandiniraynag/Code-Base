@@ -14,7 +14,7 @@
  * @param {string} prompt  - User's prompt/question
  * @returns {Promise<string>}  - Text part of the response
  */
-async function sendChatGPTPrompt(apiKey, url, prompt) {
+async function post(apiKey, url, prompt) {
   const response = await fetch(url, {
     method: "POST",
     headers: {
